@@ -1,13 +1,15 @@
 const express = require('express')
 
-const db = require('../db')
+const Users = require('../models').Users
 
 const router = express.Router()
 
 router.get('/', (req, res) => {
-  db.getUsers()
+  Users.findAll()
     .then(users => {
-      res.render('index', {users: users})
+      console.log(users[0])
+
+      return res.render('index',{users: users.map(user => user.dataValues)})
     })
     .catch(err => {
       res.status(500).send('DATABASE ERROR: ' + err.message)
