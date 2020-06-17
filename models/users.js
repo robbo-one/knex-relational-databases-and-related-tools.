@@ -6,6 +6,9 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Users.associate = function(models) {
     Users.hasOne(models.Profile, {foreignKey: 'user_id'})
+    Users.hasMany(models.Posts, {foreignKey: 'user_id'})
+    // Users.belongsToMany(Users, {through: models.Favourites, as: 'user', foreignKey: 'user_id'})
+    //self reference still to be figured out
   };
   return Users;
 };

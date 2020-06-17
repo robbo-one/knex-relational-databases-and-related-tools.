@@ -1,0 +1,35 @@
+<h1>Profile</h1>
+<div style='display: flex'>
+    <div>
+        <h3>{{name}}</h3>
+        <img src="{{Profile.image}}" alt="random image">
+    </div>
+    <div style='margin-left: 2em; margin-right: 2em'>
+        <h3>Interests: {{Profile.interests}}</h3>
+        <h5>Email: {{email}}</h5>
+        <h5>URL: {{Profile.personal_URL}}</h5>
+    </div>
+</div>
+    <div style='margin-top: 2em'>
+        <form method="POST">
+            <label for="">Title:
+                <input type="text" name='title'>
+            </label>
+            <label for="">Content:
+                <input type="text" name='content'>
+            </label>
+            <input type="submit">
+        </form>
+        <h3>This users blog posts</h3>
+        {{#if Posts}}
+        {{#each Posts}}
+        <div>
+            <h5>{{title}}</h5>
+            <h6><a href="/post/{{id}}">Read more...</a></h6>
+            <p style='text-overflow: ellipsis; width: 30%; height: 2rem; overflow: hidden;white-space: nowrap'>{{content}}</p>
+        </div>
+        {{/each}}
+        {{else}}
+        <h5>No blog posts yet!</h5>
+        {{/if}}
+    </div>

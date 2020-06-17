@@ -1,0 +1,17 @@
+<form method="POST">
+    <label>Choose base user
+        <select name="user_id" id="">
+            {{#each users}}
+                <option value={{id}}>{{name}}</option>
+            {{/each}}
+        </select>
+    </label>
+    <label>Add their favourites
+        <select name="fav_id" id="">
+            {{#each users}}
+                <option value={{id}}>{{name}}</option>
+            {{/each}}
+        </select>
+    </label>
+    <input type="submit" value="Add">
+</form>
