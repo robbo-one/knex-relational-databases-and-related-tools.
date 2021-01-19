@@ -14,4 +14,18 @@ router.get('/', (req, res) => {
     })
 })
 
+router.get('/profile/:id', (req, res) => {
+  const id = req.params.id
+  db.getUser(id)
+    .then(user => {
+      // console.log(user)
+      return res.render('profilePage',  user )
+    })
+    .catch(err => {
+      res.status(500).send('DATABASE ERROR: ' + err.message)
+    })
+})
+
+
+
 module.exports = router
