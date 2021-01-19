@@ -6,7 +6,8 @@ module.exports = {
   getUser: getUser,
   getUsers: getUsers,
   getProfile: getProfile,
-  addUser: addUser
+  addUser: addUser,
+  addProfile: addProfile
 }
 
 function getUsers (db = connection) {
@@ -28,7 +29,9 @@ function getProfile (id, db = connection) {
 function addUser (newUser, db = connection) {
   return db('users')
     .insert(newUser)
+}
 
-
-
+function addProfile (newProfile, db = connection) {
+  return db('profiles')
+    .insert(newProfile)
 }

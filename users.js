@@ -35,9 +35,28 @@ router.post('/admin/add', (req, res) => {
   console.log(req.body)
   return addUser(req.body)
     .then(result => {
-      res.redirect('/')
+      console.log(result[0])
+      res.redirect('/admin/add/' + result[0])
     }) 
 
   })
+
+router.get('/admin/add/:id', (req, res) => {
+  res.render('addProfile')
+})
+
+router.post('/admin/add/:id', (req, res) => {
+  let profile = {
+    user_id: req.params.id,
+    url: req.body.url,
+    image: req.body.image,
+    pet_peeve: req.body.pet_peeve
+  }
+  return db.addProfile(profile)
+    .then(result => {
+      console.log(result)
+      res.redirect('/')
+    })
+})
 
 module.exports = router
