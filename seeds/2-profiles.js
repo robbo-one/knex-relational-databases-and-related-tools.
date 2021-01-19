@@ -1,0 +1,30 @@
+exports.seed = function (knex, Promise) {
+  return knex('profiles').insert([
+    { id:88801, users_id: 99901, url: 'https://en.wikipedia.org/wiki/Animal', picture: 'https://www.animaladdicts.net/wp-content/uploads/2016/08/Animal-world-is-by-far-the-funniest-world-Funny-animal-compilation-265x180.jpg' },
+    { id:88802, users_id: 99902, url: 'https://en.wikipedia.org/wiki/Animal', picture: 'https://www.animaladdicts.net/wp-content/uploads/2016/08/Animal-world-is-by-far-the-funniest-world-Funny-animal-compilation-265x180.jpg' },
+    { id:88803, users_id: 99903, url: 'https://en.wikipedia.org/wiki/Animal', picture: 'https://www.animaladdicts.net/wp-content/uploads/2016/08/Animal-world-is-by-far-the-funniest-world-Funny-animal-compilation-265x180.jpg' },
+    { id:88804, users_id: 99904, url: 'https://en.wikipedia.org/wiki/Animal', picture: 'https://www.animaladdicts.net/wp-content/uploads/2016/08/Animal-world-is-by-far-the-funniest-world-Funny-animal-compilation-265x180.jpg' },
+    { id:88805, users_id: 99905, url: 'https://en.wikipedia.org/wiki/Animal', picture: 'https://www.animaladdicts.net/wp-content/uploads/2016/08/Animal-world-is-by-far-the-funniest-world-Funny-animal-compilation-265x180.jpg' },
+    { id:88806, users_id: 99906, url: 'https://en.wikipedia.org/wiki/Animal', picture: 'https://www.animaladdicts.net/wp-content/uploads/2016/08/Animal-world-is-by-far-the-funniest-world-Funny-animal-compilation-265x180.jpg' },
+    { id:88807, users_id: 99907, url: 'https://en.wikipedia.org/wiki/Animal', picture: 'https://www.animaladdicts.net/wp-content/uploads/2016/08/Animal-world-is-by-far-the-funniest-world-Funny-animal-compilation-265x180.jpg' },
+    { id:88808, users_id: 99908, url: 'https://en.wikipedia.org/wiki/Animal', picture: 'https://www.animaladdicts.net/wp-content/uploads/2016/08/Animal-world-is-by-far-the-funniest-world-Funny-animal-compilation-265x180.jpg' },
+    { id:88809, users_id: 99909, url: 'https://en.wikipedia.org/wiki/Animal', picture: 'https://www.animaladdicts.net/wp-content/uploads/2016/08/Animal-world-is-by-far-the-funniest-world-Funny-animal-compilation-265x180.jpg' },
+    { id:888010, users_id: 99910, url: 'https://en.wikipedia.org/wiki/Animal', picture: 'https://www.animaladdicts.net/wp-content/uploads/2016/08/Animal-world-is-by-far-the-funniest-world-Funny-animal-compilation-265x180.jpg' },
+    { id:888011, users_id: 99911, url: 'https://en.wikipedia.org/wiki/Animal', picture: 'https://www.animaladdicts.net/wp-content/uploads/2016/08/Animal-world-is-by-far-the-funniest-world-Funny-animal-compilation-265x180.jpg' },
+    { id:888012, users_id: 99912, url: 'https://en.wikipedia.org/wiki/Animal', picture: 'https://www.animaladdicts.net/wp-content/uploads/2016/08/Animal-world-is-by-far-the-funniest-world-Funny-animal-compilation-265x180.jpg' },
+    { id:888013, users_id: 99913, url: 'https://en.wikipedia.org/wiki/Animal', picture: 'https://www.animaladdicts.net/wp-content/uploads/2016/08/Animal-world-is-by-far-the-funniest-world-Funny-animal-compilation-265x180.jpg' },
+    { id:888014, users_id: 99914, url: 'https://en.wikipedia.org/wiki/Animal', picture: 'https://www.animaladdicts.net/wp-content/uploads/2016/08/Animal-world-is-by-far-the-funniest-world-Funny-animal-compilation-265x180.jpg' },
+    { id:888015, users_id: 99915, url: 'https://en.wikipedia.org/wiki/Animal', picture: 'https://www.animaladdicts.net/wp-content/uploads/2016/08/Animal-world-is-by-far-the-funniest-world-Funny-animal-compilation-265x180.jpg' },
+    { id:888016, users_id: 99916, url: 'https://en.wikipedia.org/wiki/Animal', picture: 'https://www.animaladdicts.net/wp-content/uploads/2016/08/Animal-world-is-by-far-the-funniest-world-Funny-animal-compilation-265x180.jpg' },
+    { id:888017, users_id: 99917, url: 'https://en.wikipedia.org/wiki/Animal', picture: 'https://www.animaladdicts.net/wp-content/uploads/2016/08/Animal-world-is-by-far-the-funniest-world-Funny-animal-compilation-265x180.jpg' },
+    { id:888018, users_id: 99918, url: 'https://en.wikipedia.org/wiki/Animal', picture: 'https://www.animaladdicts.net/wp-content/uploads/2016/08/Animal-world-is-by-far-the-funniest-world-Funny-animal-compilation-265x180.jpg' },
+    { id:888019, users_id: 99919, url: 'https://en.wikipedia.org/wiki/Animal', picture: 'https://www.animaladdicts.net/wp-content/uploads/2016/08/Animal-world-is-by-far-the-funniest-world-Funny-animal-compilation-265x180.jpg' },
+    { id:888020, users_id: 99920, url: 'https://en.wikipedia.org/wiki/Animal', picture: 'https://www.animaladdicts.net/wp-content/uploads/2016/08/Animal-world-is-by-far-the-funniest-world-Funny-animal-compilation-265x180.jpg' },
+    { id:888021, users_id: 99921, url: 'https://en.wikipedia.org/wiki/Animal', picture: 'https://www.animaladdicts.net/wp-content/uploads/2016/08/Animal-world-is-by-far-the-funniest-world-Funny-animal-compilation-265x180.jpg' },
+    { id:888022, users_id: 99922, url: 'https://en.wikipedia.org/wiki/Animal', picture: 'https://www.animaladdicts.net/wp-content/uploads/2016/08/Animal-world-is-by-far-the-funniest-world-Funny-animal-compilation-265x180.jpg' },
+    { id:888023, users_id: 99923, url: 'https://en.wikipedia.org/wiki/Animal', picture: 'https://www.animaladdicts.net/wp-content/uploads/2016/08/Animal-world-is-by-far-the-funniest-world-Funny-animal-compilation-265x180.jpg' },
+    { id:888024, users_id: 99924, url: 'https://en.wikipedia.org/wiki/Animal', picture: 'https://www.animaladdicts.net/wp-content/uploads/2016/08/Animal-world-is-by-far-the-funniest-world-Funny-animal-compilation-265x180.jpg' },
+    { id:888025, users_id: 99925, url: 'https://en.wikipedia.org/wiki/Animal', picture: 'https://www.animaladdicts.net/wp-content/uploads/2016/08/Animal-world-is-by-far-the-funniest-world-Funny-animal-compilation-265x180.jpg' },
+    { id:888026, users_id: 99926, url: 'https://en.wikipedia.org/wiki/Animal', picture: 'https://www.animaladdicts.net/wp-content/uploads/2016/08/Animal-world-is-by-far-the-funniest-world-Funny-animal-compilation-265x180.jpg' }
+  ])
+}

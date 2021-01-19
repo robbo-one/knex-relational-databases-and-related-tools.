@@ -1,6 +1,6 @@
 const express = require('express')
 const hbs = require('express-handlebars')
-
+const dbFuncs = require('./db')
 const userRoutes = require('./users')
 
 const server = express()
@@ -15,4 +15,21 @@ server.use(express.urlencoded({ extended: true }))
 
 server.use('/', userRoutes)
 
+server.get('/', (req, res) => {
+  dbFuncs.getUsers()
+  .then(user => {
+    const viewData = {
+      user: user
+    }
+    res.render('index', viewData)
+  })
+})
+
+server.get('/profiles/:id', (req, res) => {
+  dbFuncs.getUserAndProfile(req.params.id)
+  .then(user => {
+    console.log('showing', user)
+    res.render('profiles', user)
+  })
+})
 module.exports = server
