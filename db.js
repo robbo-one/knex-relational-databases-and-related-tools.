@@ -4,7 +4,8 @@ const connection = require('knex')(config)
 
 module.exports = {
   getUser: getUser,
-  getUsers: getUsers
+  getUsers: getUsers,
+  getProfile: getProfile
 }
 
 function getUsers (db = connection) {
@@ -13,4 +14,11 @@ function getUsers (db = connection) {
 
 function getUser (id, db = connection) {
   return db('users').where('id', id).first()
+}
+
+function getProfile (id, db = connection) {
+  return db('users').join('profiles', 'profiles.user_id', 'users.id')
+  .where('user_id', id)
+  .select('*', 'profiles.user_id AS id', 'users.id AS user_id').debug()
+  .first()
 }
