@@ -22,4 +22,23 @@ router.get('/profile/:id', (req, res) => {
     })
 })
 
+router.get('/addUser', (req, res) => {
+  res.render('adduser')
+}) 
+
+router.post("/addUser", (req, res) => {
+  let name = req.body.name
+  let address = req.body.address
+  let email = req.body.email
+  db.addUser(name, email)
+    .then((id) =>{
+      db.addProfile(id, address)
+      .then(res.redirect('/'))
+      
+    
+    })
+})
+
+
+
 module.exports = router
