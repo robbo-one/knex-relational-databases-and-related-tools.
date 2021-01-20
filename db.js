@@ -30,10 +30,19 @@ function addProfile (person, db = connection){
   .insert(person)
 }
 
+function getUserAndBlogPosts (id, db = connection) {
+  return db("users")
+  .join("posts", "users.id", "posts.user_id")
+  .where("user_id", id)
+  .select("*", "users.id AS id")
+  .first()
+}
+
 module.exports = {
   getUser: getUser,
   getUsers: getUsers,
   getUserById: getUserById,
   addUser: addUser,
-  addProfile: addProfile
+  addProfile: addProfile,
+  getUserAndBlogPosts: getUserAndBlogPosts
 }

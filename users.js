@@ -20,17 +20,9 @@ router.get('/userProfile/:id', (req, res) => {
 
   db.getUserById(id)
     .then(profiles => {
-      // console.log(profiles)
-
-      console.log(profiles)
-
       res.render('userProfile', profiles)
 
     })
-  // .catch(err => {
-  //   res.status(500).send('DATABASE ERROR: ' + err.message)
-  // })
-
 })
 
 router.get("/addProfile", (req, res) => {
@@ -54,12 +46,22 @@ router.post("/addProfile", (req, res) => {
   db.addUser(newUser)
     .then((result) => {
       newProfile.user_id = result[0]
-      db.addProfile( newProfile)
+      db.addProfile(newProfile)
         .then((res2) => {
-              res.redirect("/")
+          res.redirect("/")
         })
     })
 
+})
+
+router.get("/postsList/:id", (req, res) => {
+  let id = req.params.id
+
+  db.getUserAndBlogPosts(id)
+    .then(post => {
+      console.log(post)
+      res.render("postsList", post)
+    })
 })
 
 module.exports = router
