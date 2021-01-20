@@ -8,7 +8,8 @@ module.exports = {
   getProfile: getProfile,
   addUser: addUser,
   addProfile: addProfile,
-  addPost : addPost
+  addPost : addPost,
+  getBlog: getBlog
   
 }
 
@@ -22,9 +23,10 @@ function getUser (id, db = connection) {
 
 function getProfile (id, db = connection) {
   return db('users').join('profiles', 'profiles.user_id', 'users.id')
-  .where('user_id', id)
+  .where('users.id', id)
   .select('*', 'profiles.user_id AS id', 'users.id AS user_id')
   .first()
+
 }
 
 function addUser (name, email, db = connection) {
@@ -42,3 +44,7 @@ function addPost (user_id, title, content, db = connection) {
   .insert({user_id : user_id, title : title, content : content})
 }
 
+function getBlog (user_id, db = connection) {
+  return db('posts')
+  .where('user_id', user_id)
+}

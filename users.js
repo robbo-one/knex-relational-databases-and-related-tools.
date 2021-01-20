@@ -50,4 +50,14 @@ router.post('/addpost/:id', (req, res) => {
     .then(res.redirect('/profile/' + user_id))
 })
 
+router.get('/blogpost/:id', (req, res) => {
+  let user_id = req.params.id
+  db.getBlog(user_id)
+  .then((posts) =>{
+    let viewData = {
+      posts: posts
+    }
+    res.render('blogpost', viewData)
+  })
+})
 module.exports = router
