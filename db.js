@@ -9,7 +9,8 @@ module.exports = {
   addUser: addUser,
   addProfile: addProfile,
   addPost : addPost,
-  getBlog: getBlog
+  getBlog: getBlog,
+  getContent : getContent
   
 }
 
@@ -47,4 +48,10 @@ function addPost (user_id, title, content, db = connection) {
 function getBlog (user_id, db = connection) {
   return db('posts')
   .where('user_id', user_id)
+}
+
+function getContent(post_id, db = connection) {
+  return db('posts')
+  .where('id', post_id)
+  .first()
 }

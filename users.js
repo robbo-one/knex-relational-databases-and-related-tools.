@@ -60,4 +60,16 @@ router.get('/blogpost/:id', (req, res) => {
     res.render('blogpost', viewData)
   })
 })
+
+
+router.get('/blogpost/blogcontent/:id', (req, res) => {
+  let id = req.params.id
+  db.getContent(id)
+  .then((content) => {
+    console.log(content)
+    res.render('blogcontent', content)
+  })
+})
+
+
 module.exports = router
