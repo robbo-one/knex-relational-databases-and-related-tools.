@@ -25,9 +25,9 @@ function addUser (person, db = connection) {
   .insert(person)
 }
 
-function addProfile (id, person, db = connection){
+function addProfile (person, db = connection){
   return db('profiles')
-  .insert({name: person.name, url:person.url, profilePic: person.profilePic, user_id: id})
+  .insert(person)
 }
 
 module.exports = {

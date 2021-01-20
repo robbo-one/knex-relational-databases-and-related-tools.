@@ -53,7 +53,8 @@ router.post("/addProfile", (req, res) => {
 
   db.addUser(newUser)
     .then((result) => {
-      db.addProfile(result[0], newProfile)
+      newProfile.user_id = result[0]
+      db.addProfile( newProfile)
         .then((res2) => {
               res.redirect("/")
         })
