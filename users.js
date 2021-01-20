@@ -59,4 +59,17 @@ router.post('/admin/add/:id', (req, res) => {
     })
 })
 
+//Create link from profile to posts
+//retrieve posts for that user from database
+//render list showning title
+router.get('/profile/:id/posts', (req, res) => {
+  return db.getUserPosts(req.params.id) 
+    .then(posts => {
+      //console.log(posts)
+      bananas = {posts:posts}
+      //console.log(bananas)
+      res.render('posts', { posts: posts})
+    })
+}) 
+
 module.exports = router
