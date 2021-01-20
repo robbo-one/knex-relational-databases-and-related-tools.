@@ -8,6 +8,7 @@ module.exports = {
   getProfile: getProfile,
   addUser: addUser,
   addProfile: addProfile,
+  addPost : addPost
   
 }
 
@@ -34,5 +35,10 @@ function addUser (name, email, db = connection) {
 function addProfile (user_id, address, db = connection) {
   return db('profiles')
   .insert({address : address, user_id : user_id})
+}
+
+function addPost (user_id, title, content, db = connection) {
+  return db('posts')
+  .insert({user_id : user_id, title : title, content : content})
 }
 
