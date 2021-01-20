@@ -1,8 +1,13 @@
-hiiiiii
-{{id}}
 <h1>{{name}}</h1>
 <h3><em>{{email}}</em></h3>
 <h3>{{url}}</h3>
 <p>{{pet_peeve}}</p>
 <img src="{{image}}" alt="aardvarks">
 <a href="/profile/{{id}}/posts">Click here for blog posts</a>
+
+<form method="POST">
+  <label>Add user to your favourites:</label><br>
+  <label>enter your user id:</label><br>
+  <input type="text" name="user_id" required><br>
+  <input type="submit" value="add {{name}} to your favourites">
+</form>

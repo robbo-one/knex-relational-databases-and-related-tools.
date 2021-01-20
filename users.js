@@ -26,6 +26,14 @@ router.get('/profile/:id', (req, res) => {
     })
 })
 
+router.post('/profile/:id', (req, res) => {
+  db.addFavourite(req.body.user_id, req.params.id)
+   .then( () => {
+    //  alert('this person has been added to your favourites')
+     res.redirect("/profile/" + req.params.id)
+   })
+})
+
 router.get('/admin/add', (req, res) => {
   res.render('addUser')
 })

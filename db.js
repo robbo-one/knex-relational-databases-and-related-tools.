@@ -9,7 +9,8 @@ module.exports = {
   addUser: addUser,
   addProfile: addProfile,
   getUserPosts: getUserPosts,
-  getPostContent:getPostContent
+  getPostContent:getPostContent,
+  addFavourite:addFavourite
 }
 
 function getUsers (db = connection) {
@@ -47,4 +48,13 @@ function getPostContent(id, db = connection) {
   return db('posts')
     .where('id', id)
     .first()
+}
+
+function addFavourite(user_id, favourite_id, db = connection) {
+  const newFav = {
+    user_id: user_id,
+    favourite_id: favourite_id
+  }
+  return db('favourites')
+    .insert(newFav)
 }
