@@ -1,2 +1,25 @@
 <h1>Profile Page</h1>
 {{name}} has the ID {{id}} and the email {{url}} 
+{{#each posts}}
+<br>
+I made a post, it is called {{title}}
+<br>
+{{content}}
+{{/each}}
+
+
+<form class="form" action="/profile/{{id}}" method="post">
+  <label for="title" class="form-item">
+    Title:
+    <input type="text" name="title" >
+  </label>
+<br>
+
+  <label for="content" class="form-item">
+    Write your blog here:
+    <input type="text" name="content" >
+  </label>  
+<br>
+
+  <input type="submit" name="" value="Submit">
+</form>
