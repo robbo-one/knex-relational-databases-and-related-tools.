@@ -26,7 +26,7 @@ router.post('/addUser', (req, res) => {
   const profile = {
     url: req.body.url,
     vegetable: req.body.vegetable,
-    
+
   }
   console.log(profile)
   db.addUser(user, profile)
@@ -34,7 +34,6 @@ router.post('/addUser', (req, res) => {
     res.redirect('/')
 })
 })
-
 
   // this route to sit at bottom because of /:id bit
 router.get('/:id', (req, res) => {
