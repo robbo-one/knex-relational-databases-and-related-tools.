@@ -32,4 +32,14 @@ server.get('/profiles/:id', (req, res) => {
     res.render('profiles', user)
   })
 })
+
+server.post('/profiles', (req, res) => {
+  // console.log('nice body', req.body)
+  dbFuncs.addUser(req.body)
+    .then(result => {
+      // console.log('result', result)
+      res.redirect('/')
+    })
+})
+
 module.exports = server
