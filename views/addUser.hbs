@@ -3,22 +3,30 @@
 <form class="form" action="/addUser" method="post">
   <label for="name" class="form-item">
     Name:
-    <input type="text" name="name" >
+    <input type="text" name="name" required>
   </label>
 <br>
   <label for="email" class="form-item">
     Email:
-    <input type="text" name="email" >
+    <input type="text" name="email" required>
   </label>  
 <br>
   <label for="url" class="form-item">
     URL   : 
-    <input type="text" name="url" >
+    <input type="text" name="url" required>
   </label> 
 <br>
     <label for="picture" class="form-item">
     Picture:
     <input type="text" name="picture" >
+  </label> 
+  <label for="title" class="form-item">
+    Title for your first blog:
+    <input type="text" name="title" required>
+  </label> 
+  <label for="content" class="form-item">
+    Write your first blog:
+    <input type="text" name="content" required>
   </label> 
 <br>
   <input type="submit" name="" value="Submit">

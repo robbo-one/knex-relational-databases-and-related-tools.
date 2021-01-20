@@ -72,14 +72,19 @@ router.post("/addUser", (req, res) => {
     name: req.body.name,
     email: req.body.email,
     url: req.body.url,
-    picture: req.body.picture
+    picture: req.body.picture,
+    title: req.body.title,
+    content: req.body.content
   }
   
   db.createUser(newUser.name,newUser.email)
     .then((result1) => {
         db.createProfile(result1[0], newUser.url, newUser.picture )
       .then(() => {
-        res.redirect("/")
+        db.makePost(result1[0], newUser.title, newUser.content)
+        .then(() => {
+          res.redirect("/")
+        })
       })
       })
 })

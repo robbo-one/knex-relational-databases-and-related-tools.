@@ -1,23 +1,27 @@
 <h1>Profile Page</h1>
 {{name}} has the ID {{id}} and the email {{url}} 
+{{!-- {{#if {{title}} == ""}} --}}
+{{!-- <br> --}}
+{{!-- {{#else}} --}}
 {{#each posts}}
 <br>
 I made a post, it is called {{title}}
 <br>
 {{content}}
 {{/each}}
+{{!-- {{/if}} --}}
 
 
 <form class="form" action="/profile/{{id}}" method="post">
   <label for="title" class="form-item">
     Title:
-    <input type="text" name="title" >
+    <input type="text" name="title" required>
   </label>
 <br>
 
   <label for="content" class="form-item">
     Write your blog here:
-    <input type="text" name="content" >
+    <input type="text" name="content" required>
   </label>  
 <br>
 
