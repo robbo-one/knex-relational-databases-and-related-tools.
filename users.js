@@ -59,8 +59,16 @@ router.get("/postsList/:id", (req, res) => {
 
   db.getUserAndBlogPosts(id)
     .then(post => {
-      console.log(post)
       res.render("postsList", post)
+    })
+})
+
+router.get("/viewPost/:id", (req, res) => {
+  let id = req.params.id
+  console.log(id)
+  db.getUserAndBlogPosts(id)
+    .then(post => {
+      res.render("viewPost", post)
     })
 })
 
