@@ -5,8 +5,6 @@ exports.up = (knex, Promise) => {
     table.string('name')
     table.string('url')
     table.string('profilePic')
-  
-
   })
 }
 
