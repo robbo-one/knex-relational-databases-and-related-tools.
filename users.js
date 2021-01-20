@@ -14,6 +14,23 @@ router.get('/', (req, res) => {
     })
 })
 
+router.get('/create', (req, res) => {
+  return res.render('create')
+})
+
+router.post('/create', (req, res) => {
+  const postUser = {name: req.body.name, email: req.body.email}
+  const postProfile = {favourite_fruit: req.body.favourite_fruit}
+  db.createUser(postUser)
+  .then( (id) => {
+    postProfile.user_id = id
+    return db.createUserProfiles(postProfile)
+  }) 
+  .then( () => {
+    res.redirect('/')
+  })
+})
+
 router.get('/:id', (req, res) => {
   const id = req.params.id
   db.getUser(id)
@@ -26,6 +43,15 @@ router.get('/:id', (req, res) => {
       res.status(500).send('DATABASE ERROR: ' + err.message)
     })
 })
+
+
+
+
+
+
+
+
+
 
 
 
