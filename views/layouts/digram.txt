@@ -1,0 +1,38 @@
+
+/
+Table users as users {
+  id int [increment] // auto-increment
+  full_name string
+  email string
+}
+
+Table profiles {
+  id increment
+  user_id integer
+  address string
+ }
+
+
+Table posts {
+  id increment
+  user_id integer
+  title string
+  content string
+}
+
+
+Table favs {
+  id increment
+  user_id integer
+  favs_id integer
+}
+
+
+
+
+
+
+Ref: "profiles"."user_id" < "users"."id"
+Ref: "posts"."user_id" < "users"."id"
+Ref: "favs"."user_id" < "users"."id"
+Ref: "favs"."favs_id" < "posts"."id"
