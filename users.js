@@ -66,10 +66,16 @@ router.get('/profile/:id/posts', (req, res) => {
   return db.getUserPosts(req.params.id) 
     .then(posts => {
       //console.log(posts)
-      bananas = {posts:posts}
-      //console.log(bananas)
       res.render('posts', { posts: posts})
     })
 }) 
+
+router.get('/profile/:id/posts/:postId', (req, res) => {
+  return db.getPostContent(req.params.postId)
+    .then(content => {
+      console.log(content)
+      res.render('postContent', content)
+    })
+})
 
 module.exports = router

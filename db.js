@@ -8,7 +8,8 @@ module.exports = {
   getProfile: getProfile,
   addUser: addUser,
   addProfile: addProfile,
-  getUserPosts
+  getUserPosts: getUserPosts,
+  getPostContent:getPostContent
 }
 
 function getUsers (db = connection) {
@@ -40,4 +41,10 @@ function addProfile (newProfile, db = connection) {
 function getUserPosts(id, db = connection) {
   return db('posts')
     .where('user_id', id)
+}
+
+function getPostContent(id, db = connection) {
+  return db('posts')
+    .where('id', id)
+    .first()
 }
