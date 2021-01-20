@@ -7,6 +7,7 @@ module.exports = {
   getUsers: getUsers,
   createUser: createUser,
   createUserProfiles: createUserProfiles,
+  writeBlog: writeBlog
 }
 
 function getUsers (db = connection) {
@@ -30,8 +31,12 @@ function createUserProfiles(newData, db = connection) {
   console.log(newData)
   return db('profiles')
   //.join('users','profiles.id','profiles.user_id')
-  .insert(newData).debug()
+  .insert(newData).debug()  
 }
 
 
-
+function writeBlog(newData, db = connection) {
+  console.log('adding a post')
+  return db('posts')
+  .insert(newData)
+  }

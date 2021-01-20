@@ -1,0 +1,18 @@
+<h1>Hello World!</h1><br>
+<p>Write a blog here</p>
+
+<form action="/{{id}}/writeblog" method="post"> 
+<label for="name">
+    Title: <br><br>
+    <input type="text" name="title" value="{{title}}">
+</label>
+<br><br>
+<label for="name">
+    Blog Post: <br><br>
+    <textarea style="width: 400px; height: 150px" type="text" name="content" value="{{content}}"></textarea>
+</label>
+<br><br>
+<br>
+<br>
+<button type="submit" name="" value="Submit">Submit</button>
+</form>

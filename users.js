@@ -31,6 +31,30 @@ router.post('/create', (req, res) => {
   })
 })
 
+router.get('/:id/blogpost', (req, res) => {
+  return res.render('blogpost')
+})
+
+router.get('/:id/writeblog', (req, res) => {
+  const id = req.params.id
+  return res.render('writeblog', {id: id})
+}) 
+
+router.post('/:id/writeblog', (req, res) => {
+  const id = req.params.id
+  const blogPost = {title: req.body.title, content: req.body.content}
+  db.writeBlog(blogPost)
+  .then((id) => {
+    blogPost.user_id = id
+  })
+  .then(() => {
+    //old school way
+    // res.redirect('/')
+    //best practice
+    res.redirect(`/${id}`)
+  })
+})
+
 router.get('/:id', (req, res) => {
   const id = req.params.id
   db.getUser(id)
