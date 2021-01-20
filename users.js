@@ -14,6 +14,29 @@ router.get('/', (req, res) => {
     })
 })
 
+router.get('/addUser', (req, res) => {
+  res.render('addUser', {})
+  })
+
+router.post('/addUser', (req, res) => {
+  const user = {
+    name: req.body.name,
+    email: req.body.email,
+  }
+  const profile = {
+    url: req.body.url,
+    vegetable: req.body.vegetable,
+    
+  }
+  console.log(profile)
+  db.addUser(user, profile)
+  .then(() => {
+    res.redirect('/')
+})
+})
+
+
+  // this route to sit at bottom because of /:id bit
 router.get('/:id', (req, res) => {
     db.getProfile(req.params.id)
     .then(info => {
