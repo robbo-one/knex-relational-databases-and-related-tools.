@@ -41,13 +41,10 @@ router.get('/:id/writeblog', (req, res) => {
 }) 
 
 router.post('/:id/writeblog', (req, res) => {
-  const id = req.params.id
-  const blogPost = {title: req.body.title, content: req.body.content}
+  const blogPost = {title: req.body.title, content: req.body.content, user_id: req.params.id}
   db.writeBlog(blogPost)
-  .then((id) => {
-    blogPost.user_id = id
-  })
   .then(() => {
+    const id = req.params.id
     //old school way
     // res.redirect('/')
     //best practice
